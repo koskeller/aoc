@@ -30,7 +30,7 @@ mod tests {
         assert_eq!(solve_hashset(input, 4), 1920);
         assert_eq!(solve_unique(input, 4), 1920);
 
-        assert_eq!(solve_hashset(input, 14), 1920);
-        assert_eq!(solve_unique(input, 14), 1920);
+        assert_eq!(solve_hashset(input, 14), 2334);
+        assert_eq!(solve_unique(input, 14), 2334);
     }
 }
