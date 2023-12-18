@@ -1,11 +1,11 @@
 lib.rs starter:
 
 ```rust
-pub fn part_one(input: &str) -> usize {
+fn part_one(input: &str) -> u32 {
   todo!()
 }
 
-pub fn part_two(input: &str) -> usize {
+fn part_two(input: &str) -> u32 {
   todo!()
 }
 
