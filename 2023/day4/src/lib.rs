@@ -21,15 +21,15 @@ fn part_two(input: &str) -> u32 {
     }
 
     for i in 0..cards.len() {
-        let count_winning = winnings.get(&i).unwrap().clone();
+        let winnings_count = winnings.get(&i).unwrap();
         let current_card_count = cards.get(&i).unwrap().clone();
-        for n in i + 1..(1 + i + count_winning as usize) {
+        for n in (i + 1)..(1 + i + *winnings_count as usize) {
             let card = cards.get_mut(&n).unwrap();
             *card += current_card_count;
         }
     }
 
-    cards.into_iter().map(|(_, value)| value).sum()
+    cards.values().sum()
 }
 
 fn count_winning_numbers(input: &str) -> u32 {
@@ -38,11 +38,11 @@ fn count_winning_numbers(input: &str) -> u32 {
     matched.len() as u32
 }
 
-fn calculate_points(matched: u32) -> u32 {
-    match matched {
+fn calculate_points(n: u32) -> u32 {
+    match n {
         0 => 0,
         1 => 1,
-        _ => 2_u32.pow(matched - 1),
+        _ => 2_u32.pow(n - 1),
     }
 }
 
